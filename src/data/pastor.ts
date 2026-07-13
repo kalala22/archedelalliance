@@ -1,17 +1,11 @@
 import type { Pastor } from "@/types";
 
 export const pastor: Pastor = {
-  id: "pasteur-mukendi",
-  name: "Pasteur Emmanuel Mukendi",
+  id: "pasteur-israel",
+  name: "Pasteur Israel N'sembe-Loyela",
   title: "Pasteur Titulaire & Fondateur",
-  bio: "Le Pasteur Emmanuel Mukendi est un homme de Dieu passionné, visionnaire et dévoué au service du Seigneur depuis plus de 30 ans. Son ministère est marqué par un enseignement profond de la Parole, un cœur pastoral attentionné et un leadership inspirant.",
-  fullBio: `Né à Kinshasa en 1965, Emmanuel Mukendi a reçu l'appel de Dieu dès son adolescence. Après des études en théologie à l'Institut Supérieur de Théologie de Kinshasa et un parcours de formation pastorale en Afrique du Sud, il a fondé le Centre Évangélique Arche de l'Alliance en 1998 avec une poignée de fidèles.
-
-Son ministère est caractérisé par un enseignement puissant et accessible de la Parole de Dieu, une passion pour la formation de disciples et un engagement profond envers la communauté. Sous sa direction, l'église est passée de 12 membres à plus de 2 500 fidèles.
-
-Le Pasteur Mukendi est également auteur de plusieurs ouvrages sur la vie chrétienne et intervient régulièrement dans des conférences internationales. Marié à Maman Grâce Mukendi depuis 1990, il est père de quatre enfants et grand-père de deux petits-enfants.
-
-Sa vision est claire : « Chaque membre de l'Arche de l'Alliance doit être un ambassadeur du Christ dans sa sphère d'influence, portant la lumière de l'Évangile dans l'obscurité de ce monde. »`,
+  bio: "Le Pasteur Israel N'sembe-Loyela est un homme de Dieu, lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum",
+  fullBio: `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum`,
   quote:
     "La foi n'est pas une destination, c'est un voyage quotidien avec Dieu. Chaque jour est une nouvelle opportunité de Le glorifier par nos vies.",
   vision:

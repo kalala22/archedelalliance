@@ -5,27 +5,30 @@ import { motion } from "framer-motion";
 import { Quote, ArrowRight } from "lucide-react";
 import { fadeInLeft, fadeInRight, defaultViewport } from "@/lib/animations";
 import { pastor } from "@/data/pastor";
+import Image from "next/image";
 
 export function PastorPreview() {
   return (
     <section className="py-20 md:py-28">
       <div className="container-church">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Pastor image placeholder */}
+          {/* Pastor image */}
           <motion.div initial="hidden" whileInView="visible" viewport={defaultViewport} variants={fadeInLeft}>
-            <div className="relative mx-auto max-w-md">
-              <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-light)]">
-                <div className="flex h-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto mb-4 h-32 w-32 rounded-full bg-[var(--color-gold)]/10 flex items-center justify-center">
-                      <span className="font-heading text-4xl font-bold text-[var(--color-gold)]">EM</span>
-                    </div>
-                    <p className="text-sm text-gray-400">Pasteur Emmanuel Mukendi</p>
-                  </div>
-                </div>
+            <div className="group relative mx-auto max-w-md">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-navy)] shadow-2xl shadow-[var(--color-navy)]/20">
+                <Image
+                  src="/images/pastorisrael.jpg"
+                  alt="Pasteur Israel N'sembe-Loyela"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Subtle bottom shadow overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-navy-dark)]/50 via-transparent to-transparent" />
               </div>
-              {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl border-2 border-[var(--color-gold)]/20" />
+              {/* Decorative gold frame */}
+              <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl border-2 border-[var(--color-gold)]/35 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
+
             </div>
           </motion.div>
 
