@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Clock, Calendar, Sparkles, Users, BookOpen } from "lucide-react";
 import { heroTextReveal, fadeIn, staggerContainer } from "@/lib/animations";
 import Image from "next/image";
 /**
@@ -114,29 +114,85 @@ export function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Worship times quick info */}
+          {/* Worship times quick info — Structured Glassmorphic Grid */}
           <motion.div
             variants={fadeIn}
-            className="mx-auto mt-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8"
+            className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 text-left md:grid-cols-2"
           >
-            {[
-              { day: "Dimanche", time: "08h00", label: "Culte Principal" },
-              { day: "Mercredi", time: "18h00", label: "Étude Biblique" },
-              { day: "Vendredi", time: "18h00", label: "Prière" },
-            ].map((item) => (
-              <div
-                key={item.day}
-                className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-5 py-3"
-              >
-                <div className="h-8 w-[2px] rounded-full bg-[var(--color-gold)]" />
-                <div>
-                  <span className="block text-xs font-medium text-[var(--color-gold)]">
-                    {item.day} · {item.time}
-                  </span>
-                  <span className="block text-sm text-gray-400">{item.label}</span>
+            {/* Carte 1 : Dimanche (3 Cultes) */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-[var(--color-navy-dark)]/75 p-5 backdrop-blur-md transition-all duration-300 hover:border-[var(--color-gold)] hover:bg-[var(--color-navy-dark)]/90 hover:shadow-lg hover:shadow-[var(--color-gold)]/10">
+              <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-gold)]/15 text-[var(--color-gold)]">
+                    <Calendar className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-sm font-bold text-white">Dimanche</h3>
+                    <p className="text-[11px] text-[var(--color-gold)]">3 Cultes de Célébration</p>
+                  </div>
                 </div>
+
               </div>
-            ))}
+
+              <div className="space-y-2">
+                {[
+                  { label: "1er Culte", time: "07h30 – 09h30" },
+                  { label: "2e Culte", time: "10h00 – 11h30" },
+                  { label: "3e Culte", time: "12h00 – 13h30" },
+                ].map((culte, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between rounded-xl bg-white/[0.04] px-3.5 py-2 transition-colors group-hover:bg-white/[0.07]"
+                  >
+                    <span className="text-xs font-semibold text-gray-200">{culte.label}</span>
+                    <span className="flex items-center gap-1.5 rounded-lg bg-[var(--color-gold)]/15 px-2.5 py-1 text-xs font-bold text-[var(--color-gold)]">
+                      <Clock className="h-3 w-3" />
+                      {culte.time}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carte 2 : Programmes de la Semaine */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-navy-dark)]/75 p-5 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-[var(--color-navy-dark)]/90">
+              <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-[var(--color-gold)]">
+                    <Clock className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-sm font-bold text-white">En Semaine</h3>
+                    <p className="text-[11px] text-gray-400">Tous à 17h00 – 19h30</p>
+                  </div>
+                </div>
+                <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-gray-300">
+                  17h00 - 19h30
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                {[
+                  { day: "Mercredi", title: "Étude Biblique", icon: BookOpen },
+                  { day: "Vendredi", title: "Prière & Intercession", icon: Sparkles },
+                  { day: "Samedi", title: "Réunion Jeunesse", icon: Users },
+                ].map((prog, i) => {
+                  const Icon = prog.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between rounded-xl bg-white/[0.04] px-3.5 py-2 transition-colors group-hover:bg-white/[0.07]"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon className="h-3.5 w-3.5 text-[var(--color-gold)]" />
+                        <span className="text-xs font-bold text-white">{prog.day}</span>
+                      </div>
+                      <span className="text-xs font-medium text-gray-300">{prog.title}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

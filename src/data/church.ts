@@ -66,11 +66,7 @@ export const churchVision =
 export const churchMission =
   "Proclamer l'Évangile de Jésus-Christ avec excellence, former des disciples matures, servir notre communauté avec amour et compassion, et bâtir une église qui reflète la diversité et la beauté du Royaume de Dieu.";
 
-export const churchHistory = `Fondé en 1998 dans le quartier de Masina à Kinshasa, le Centre Évangélique Arche de l'Alliance est né d'une vision divine donnée au Pasteur Emmanuel Mukendi. Ce qui a commencé comme un petit groupe de prière de 12 personnes dans un salon familial est devenu aujourd'hui l'une des assemblées les plus dynamiques de l'Est de Kinshasa.
-
-Au fil des années, l'église a grandi non seulement en nombre, mais aussi en impact. Des programmes d'aide sociale, une école du dimanche florissante et des ministères diversifiés ont vu le jour, touchant des milliers de vies dans la communauté de Masina et au-delà.
-
-Fidèle à sa devise « Un lieu de foi, d'espérance et d'amour », l'Arche de l'Alliance continue d'être un phare d'espoir dans un monde en quête de sens, offrant un accueil chaleureux à tous ceux qui cherchent Dieu.`;
+export const churchHistory = `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum`;
 
 export const stats: Stat[] = [
   { label: "Membres actifs", value: 2500, suffix: "+", icon: "Users" },
