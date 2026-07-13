@@ -35,9 +35,9 @@ export function Navbar() {
             : "bg-transparent py-4"
         )}
       >
-        <div className="container-church flex items-center justify-between">
+        <div className="container-church flex items-center justify-between gap-2 xl:gap-4">
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3">
+          <Link href="/" className="group flex shrink-0 items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-gold)] text-[var(--color-navy-dark)] transition-transform duration-300 group-hover:scale-105">
               <span className="font-heading text-lg font-bold">A</span>
             </div>
@@ -52,18 +52,18 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
+          <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex" aria-label="Navigation principale">
             {navigation.map((item) => (
               <div
                 key={item.href}
-                className="relative"
+                className="relative flex items-center"
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                    "flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-xs xl:px-3 xl:text-sm font-medium transition-colors",
                     pathname === item.href || pathname.startsWith(item.href + "/")
                       ? "text-[var(--color-gold)]"
                       : "text-gray-300 hover:text-white"
@@ -107,10 +107,10 @@ export function Navbar() {
           </nav>
 
           {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-sm font-semibold text-[var(--color-navy-dark)] transition-all duration-300 hover:bg-[var(--color-gold-light)] hover:shadow-lg hover:shadow-[var(--color-gold)]/20 lg:inline-flex"
+              className="hidden whitespace-nowrap rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-xs xl:text-sm font-semibold text-[var(--color-navy-dark)] transition-all duration-300 hover:bg-[var(--color-gold-light)] hover:shadow-lg hover:shadow-[var(--color-gold)]/20 lg:inline-flex"
             >
               Nous rejoindre
             </Link>
