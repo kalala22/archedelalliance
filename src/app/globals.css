@@ -69,6 +69,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -76,6 +78,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-body), "Inter", system-ui, sans-serif;
   line-height: 1.7;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Headings use Playfair Display */

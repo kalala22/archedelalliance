@@ -4,15 +4,38 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { heroTextReveal, fadeIn, staggerContainer } from "@/lib/animations";
-
+import Image from "next/image";
 /**
  * Full-screen hero section with gradient overlay and animated text.
  */
 export function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[var(--color-navy-dark)]">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0">
+      {/* Background Image & Overlays */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Image avec zoom cinématique (Ken Burns effect) */}
+        <motion.div
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1.25 }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/hero.jpeg"
+            alt="Arche de l'Alliance"
+            fill
+            priority
+            className="object-cover"
+          />
+        </motion.div>
+        {/* Dark gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-navy-dark)]/90 via-[var(--color-navy-dark)]/75 to-[var(--color-navy-dark)]/85" />
+        {/* Animated radial accents */}
         <div
           className="absolute inset-0 opacity-30"
           style={{
