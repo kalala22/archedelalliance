@@ -9,14 +9,27 @@ interface PageHeroProps {
   title: string;
   breadcrumbs: { label: string; href?: string }[];
   description?: string;
+  bgImage?: string;
 }
 
 /**
  * Hero banner for sub-pages with breadcrumb navigation and parallax background.
  */
-export function PageHero({ title, breadcrumbs, description }: PageHeroProps) {
+export function PageHero({
+  title,
+  breadcrumbs,
+  description,
+  bgImage,
+}: PageHeroProps) {
   return (
-    <section className="relative flex min-h-[40vh] items-center overflow-hidden bg-[var(--color-navy)]">
+    <section
+      className="relative flex min-h-[40vh] items-center overflow-hidden bg-cover bg-center bg-no-repeat bg-[var(--color-navy)]"
+      style={{
+        backgroundImage: bgImage
+          ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bgImage})`
+          : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/backgrounds/page-bg-union-musicale.jpeg)",
+      }}
+    >
       {/* Abstract pattern overlay */}
       <div
         className="absolute inset-0 opacity-5"

@@ -3,15 +3,15 @@ import type { Ministry } from "@/types";
 export const ministries: Ministry[] = [
   {
     id: "louange",
-    slug: "louange-et-adoration",
-    name: "Louange & Adoration",
+    slug: "union-musicale",
+    name: "Union Musicale",
     description:
       "Conduire l'assemblée dans la présence de Dieu à travers la musique et l'adoration.",
     fullDescription: `Le ministère de Louange et Adoration est le cœur battant de nos célébrations. Composé de musiciens, choristes et techniciens son dévoués, ce ministère a pour mission de créer une atmosphère propice à la rencontre avec Dieu.
 
 Nos équipes se préparent chaque semaine à travers des répétitions rigoureuses et des moments de prière, afin d'offrir à Dieu et à l'assemblée un temps d'adoration authentique et puissant. Nous croyons que la louange est une arme spirituelle et un mode de vie.`,
     icon: "Music",
-    image: "/images/ministries/louange.jpg",
+    image: "/images/ministeres/unionmusical.jpg",
     leader: "Frère David Kabongo",
     activities: [
       "Répétitions hebdomadaires",
@@ -30,7 +30,7 @@ Nos équipes se préparent chaque semaine à travers des répétitions rigoureus
     fullDescription: `Le ministère d'Intercession est le pilier spirituel de notre église. Composé de guerriers de prière engagés, ce ministère veille sur l'assemblée, les familles et la nation à travers une intercession fervente et organisée.
 
 Chaque semaine, les intercesseurs se réunissent pour porter les besoins de l'église devant le trône de la grâce. Des chaînes de prière, des veillées et des jeûnes collectifs rythment la vie de ce ministère essentiel.`,
-    icon: "HandHeart",
+    icon: "Flame",
     image: "/images/ministries/intercession.jpg",
     leader: "Sœur Marie Tshilumba",
     activities: [
@@ -64,13 +64,13 @@ Notre vision est de voir une jeunesse radicalement transformée par l'Évangile,
   },
   {
     id: "femmes",
-    slug: "femmes-de-valeur",
-    name: "Femmes de Valeur",
+    slug: "ministere-des-femmes",
+    name: "Ministère des Femmes",
     description:
       "Encourager et fortifier les femmes dans leur foi, leur famille et leur appel.",
-    fullDescription: `Le ministère des Femmes de Valeur rassemble les femmes de l'église autour d'une vision commune : devenir des femmes accomplies selon le cœur de Dieu. À travers des enseignements, des séminaires et des moments de communion, ce ministère aborde les défis spécifiques aux femmes dans la société congolaise.
+    fullDescription: `Le ministère des Dames de l'église Arche de l'Alliance est un espace de fraternité, d'édification et d'action pour les femmes. Composé de femmes de tous âges et de tous horizons, ce ministère a pour mission de soutenir les femmes dans leur vie spirituelle, familiale et sociale.
 
-Des programmes d'autonomisation, de formation professionnelle et de soutien familial complètent l'aspect spirituel, faisant de ce ministère un véritable lieu de transformation.`,
+À travers des rencontres régulières, des enseignements bibliques, des projets d'entraide et des actions communautaires, nous accompagnons les femmes dans leur développement personnel et spirituel, les encourageant à vivre une foi authentique et à être des bénédictions dans leur entourage.`,
     icon: "Heart",
     image: "/images/ministries/femmes.jpg",
     leader: "Maman Grâce Mukendi",
@@ -85,8 +85,8 @@ Des programmes d'autonomisation, de formation professionnelle et de soutien fami
   },
   {
     id: "hommes",
-    slug: "hommes-de-foi",
-    name: "Hommes de Foi",
+    slug: "ministere-des-hommes",
+    name: "Ministère des Hommes",
     description:
       "Former des hommes responsables, spirituellement matures et engagés.",
     fullDescription: `Le ministère des Hommes de Foi a pour mission de former des hommes selon le modèle de Christ : des leaders serviteurs dans leur foyer, leur église et leur communauté. À travers des petits groupes, des enseignements et des activités fraternelles, ce ministère aide les hommes à grandir dans leur identité masculine selon Dieu.
@@ -105,8 +105,8 @@ Le programme comprend des études sur le leadership biblique, la responsabilité
   },
   {
     id: "enfants",
-    slug: "ministere-des-enfants",
-    name: "Ministère des Enfants",
+    slug: "ministere-aupres-des-enfants",
+    name: "Ministère auprès des Enfants",
     description:
       "Enseigner la Parole de Dieu aux plus jeunes de manière créative et ludique.",
     fullDescription: `Le Ministère des Enfants est dédié à l'enseignement de la foi aux enfants de 0 à 12 ans pendant les services du dimanche. Nos moniteurs formés utilisent des méthodes pédagogiques adaptées à chaque tranche d'âge pour rendre la Parole de Dieu accessible et vivante.
@@ -125,13 +125,17 @@ Jeux, chants, histoires bibliques illustrées et activités manuelles sont au pr
   },
   {
     id: "evangelisation",
-    slug: "evangelisation",
-    name: "Évangélisation",
+    slug: "evangelisation-et-suivi",
+    name: "Évangélisation et Suivi",
     description:
       "Partager la Bonne Nouvelle de Jésus-Christ dans notre communauté et au-delà.",
-    fullDescription: `Le ministère d'Évangélisation est le bras missionnaire de notre église. Avec passion et créativité, nos équipes sortent chaque semaine dans les rues de Masina et des quartiers environnants pour partager l'amour de Christ.
+    fullDescription: `Le ministère d'Évangélisation et de Suivi est le bras missionnaire de notre église. Avec passion et créativité, nos équipes sortent chaque semaine dans les rues de Masina et des quartiers environnants pour partager l'amour de Christ.
 
-Des campagnes d'évangélisation, des projections de films chrétiens, des distributions de Nouveaux Testaments et des visites à domicile constituent les principales activités de ce ministère qui a vu des centaines de personnes venir à Christ chaque année.`,
+Des campagnes d'évangélisation, des projections de films chrétiens, des distributions de Nouveaux Testaments et des visites à domicile constituent les principales activités de ce ministère qui a vu des centaines de personnes venir à Christ chaque année.
+
+Le volet suivi est également assuré par ce ministère, qui accompagne les nouveaux convertis dans leur parcours de foi, les aidant à grandir dans leur relation avec Christ et à s'intégrer dans la communauté.
+
+Si vous avez un cœur pour l'évangélisation et le suivi des nouveaux convertis, ce ministère est fait pour vous.`,
     icon: "Megaphone",
     image: "/images/ministries/evangelisation.jpg",
     leader: "Frère Samuel Mutombo",
@@ -145,15 +149,15 @@ Des campagnes d'évangélisation, des projections de films chrétiens, des distr
     meetingTime: "Samedi 08h00 - 12h00",
   },
   {
-    id: "action-sociale",
-    slug: "action-sociale",
-    name: "Action Sociale",
+    id: "communication-chretienne-et-medias",
+    slug: "communication-chretienne-et-medias",
+    name: "Communication Chretienne et Médias",
     description:
       "Servir les plus vulnérables de notre communauté avec compassion et dignité.",
     fullDescription: `Le ministère d'Action Sociale incarne l'amour de Christ en action. Engagé auprès des orphelins, des veuves, des malades et des familles en difficulté, ce ministère coordonne les efforts de solidarité de l'église.
 
 Des programmes d'aide alimentaire, de soutien scolaire, d'assistance médicale et d'accompagnement psychosocial font de ce ministère un pilier essentiel de l'impact communautaire de l'Arche de l'Alliance.`,
-    icon: "HandHelping",
+    icon: "Radio",
     image: "/images/ministries/action-sociale.jpg",
     leader: "Sœur Béatrice Nzuzi",
     activities: [

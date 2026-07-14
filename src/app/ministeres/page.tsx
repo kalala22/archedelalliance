@@ -19,6 +19,7 @@ export default function MinistriesPage() {
     <>
       <PageHero
         title="Nos Ministères"
+
         breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Ministères" }]}
         description="Chaque membre a un don unique et une place dans le corps de Christ. Trouvez votre sphère d'impact et servez avec passion."
       />
