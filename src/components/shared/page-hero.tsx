@@ -27,7 +27,7 @@ export function PageHero({
       style={{
         backgroundImage: bgImage
           ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bgImage})`
-          : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/backgrounds/page-bg-union-musicale.jpeg)",
+          : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
       }}
     >
       {/* Abstract pattern overlay */}

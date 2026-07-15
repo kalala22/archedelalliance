@@ -59,5 +59,5 @@ export const pastor: Pastor = {
         "Plus de 2 500 membres, 8 ministères actifs et un impact communautaire grandissant",
     },
   ],
-  image: "/images/pastor.jpg",
+  image: "/images/pastorisrael.jpg",
 };

@@ -7,6 +7,7 @@ import { pastor } from "@/data/pastor";
 import { sermons } from "@/data/sermons";
 import { formatDate } from "@/utils/format";
 import { Quote, Play, Clock } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Pasteur Titulaire",
@@ -27,13 +28,16 @@ export default function PastorPage() {
             <ScrollReveal animation="fadeLeft" className="lg:col-span-2">
               <div className="relative mx-auto max-w-sm">
                 <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-light)]">
-                  <div className="flex h-full items-center justify-center">
-                    <div className="text-center">
-                      <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-[var(--color-gold)]/10">
-                        <span className="font-heading text-5xl font-bold text-[var(--color-gold)]">EM</span>
-                      </div>
-                      <p className="text-sm text-gray-400">{pastor.name}</p>
-                    </div>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-navy)] shadow-2xl shadow-[var(--color-navy)]/20">
+                    <Image
+                      src="/images/pastorisrael.jpg"
+                      alt="Pasteur Israel N'sembe-Loyela"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 450px"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Subtle bottom shadow overlay for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-navy-dark)]/50 via-transparent to-transparent" />
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl border-2 border-[var(--color-gold)]/20" />

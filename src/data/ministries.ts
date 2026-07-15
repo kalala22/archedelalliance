@@ -31,7 +31,7 @@ Nos équipes se préparent chaque semaine à travers des répétitions rigoureus
 
 Chaque semaine, les intercesseurs se réunissent pour porter les besoins de l'église devant le trône de la grâce. Des chaînes de prière, des veillées et des jeûnes collectifs rythment la vie de ce ministère essentiel.`,
     icon: "Flame",
-    image: "/images/ministries/intercession.jpg",
+    image: "/images/assembler.jpg",
     leader: "Sœur Marie Tshilumba",
     activities: [
       "Prière quotidienne du matin",
@@ -51,7 +51,7 @@ Chaque semaine, les intercesseurs se réunissent pour porter les besoins de l'é
 
 Notre vision est de voir une jeunesse radicalement transformée par l'Évangile, qui refuse le conformisme du monde et choisit de vivre selon les standards du Royaume de Dieu.`,
     icon: "Flame",
-    image: "/images/ministries/jeunesse.jpg",
+    image: "/images/assembler.jpg",
     leader: "Frère Jonathan Ilunga",
     activities: [
       "Études bibliques jeunesse",
@@ -72,7 +72,7 @@ Notre vision est de voir une jeunesse radicalement transformée par l'Évangile,
 
 À travers des rencontres régulières, des enseignements bibliques, des projets d'entraide et des actions communautaires, nous accompagnons les femmes dans leur développement personnel et spirituel, les encourageant à vivre une foi authentique et à être des bénédictions dans leur entourage.`,
     icon: "Heart",
-    image: "/images/ministries/femmes.jpg",
+    image: "/images/assembler.jpg",
     leader: "Maman Grâce Mukendi",
     activities: [
       "Études bibliques pour femmes",
@@ -93,7 +93,7 @@ Notre vision est de voir une jeunesse radicalement transformée par l'Évangile,
 
 Le programme comprend des études sur le leadership biblique, la responsabilité familiale, l'intégrité professionnelle et la vie de prière.`,
     icon: "Shield",
-    image: "/images/ministries/hommes.jpg",
+    image: "/images/assembler.jpg",
     leader: "Frère Pierre Kasongo",
     activities: [
       "Petit-déjeuner fraternel mensuel",
@@ -113,7 +113,7 @@ Le programme comprend des études sur le leadership biblique, la responsabilité
 
 Jeux, chants, histoires bibliques illustrées et activités manuelles sont au programme pour que chaque enfant puisse développer une relation personnelle avec Jésus dès le plus jeune âge.`,
     icon: "Baby",
-    image: "/images/ministries/enfants.jpg",
+    image: "/images/assembler.jpg",
     leader: "Sœur Rachel Kalala",
     activities: [
       "École du Dimanche",
@@ -137,7 +137,7 @@ Le volet suivi est également assuré par ce ministère, qui accompagne les nouv
 
 Si vous avez un cœur pour l'évangélisation et le suivi des nouveaux convertis, ce ministère est fait pour vous.`,
     icon: "Megaphone",
-    image: "/images/ministries/evangelisation.jpg",
+    image: "/images/assembler.jpg",
     leader: "Frère Samuel Mutombo",
     activities: [
       "Évangélisation de rue",
@@ -151,22 +151,21 @@ Si vous avez un cœur pour l'évangélisation et le suivi des nouveaux convertis
   {
     id: "communication-chretienne-et-medias",
     slug: "communication-chretienne-et-medias",
-    name: "Communication Chretienne et Médias",
+    name: "Communication Chrétienne et Médias",
     description:
-      "Servir les plus vulnérables de notre communauté avec compassion et dignité.",
-    fullDescription: `Le ministère d'Action Sociale incarne l'amour de Christ en action. Engagé auprès des orphelins, des veuves, des malades et des familles en difficulté, ce ministère coordonne les efforts de solidarité de l'église.
+      "Assurer le rayonnement du message de l'Évangile à travers le numérique et les médias.",
+    fullDescription: `Le ministère de Communication Chrétienne et Médias a pour vocation d'utiliser les outils technologiques, audiovisuels et numériques pour propager l'Évangile de Jésus-Christ et connecter notre communauté à travers le monde.
 
-Des programmes d'aide alimentaire, de soutien scolaire, d'assistance médicale et d'accompagnement psychosocial font de ce ministère un pilier essentiel de l'impact communautaire de l'Arche de l'Alliance.`,
+Qu'il s'agisse de la réalisation vidéo, de la captation en direct des cultes (livestreaming), de la photographie, du design graphique ou de la gestion de nos réseaux sociaux, notre équipe s'efforce d'exceller pour la gloire de Dieu.`,
     icon: "Radio",
-    image: "/images/ministries/action-sociale.jpg",
-    leader: "Sœur Béatrice Nzuzi",
+    image: "/images/assembler.jpg",
+    leader: "Frère Caleb Mbuyi",
     activities: [
-      "Aide alimentaire",
-      "Soutien scolaire",
-      "Visites aux malades",
-      "Assistance aux orphelins",
-      "Programmes d'autonomisation",
+      "Captation et diffusion en direct",
+      "Numérique et réseaux sociaux",
+      "Photographie et design graphique",
+      "Sonorisation et régie technique",
     ],
-    meetingTime: "Mercredi 15h00 - 17h00",
+    meetingTime: "Samedi 13h00 - 16h00",
   },
 ];

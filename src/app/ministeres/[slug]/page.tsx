@@ -56,6 +56,7 @@ export default async function MinistryDetailPage({
           { label: ministry.name },
         ]}
         description={ministry.description}
+        bgImage={ministry.image}
       />
 
       <section className="py-20 md:py-28">
