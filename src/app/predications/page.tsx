@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/page-hero";
 import { CTASection } from "@/components/shared/cta-section";
 import { SermonsGrid } from "@/components/sermons/sermons-grid";
+import { fetchYouTubeSermons } from "@/services/youtube";
 
 export const metadata: Metadata = {
   title: "Prédications & Messages",
@@ -9,7 +11,15 @@ export const metadata: Metadata = {
     "Écoutez et regardez les prédications du Centre Évangélique Arche de l'Alliance. Enseignements bibliques inspirants pour votre croissance spirituelle.",
 };
 
-export default function SermonsPage() {
+interface SermonsPageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function SermonsPage({ searchParams }: SermonsPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const videoId = typeof resolvedSearchParams?.videoId === "string" ? resolvedSearchParams.videoId : undefined;
+  const sermons = await fetchYouTubeSermons(12);
+
   return (
     <>
       <PageHero
@@ -23,7 +33,9 @@ export default function SermonsPage() {
 
       <section className="py-20 md:py-28">
         <div className="container-church">
-          <SermonsGrid />
+          <Suspense fallback={<div className="py-16 text-center font-heading text-lg text-[var(--color-navy)]">Chargement des prédications...</div>}>
+            <SermonsGrid initialSermons={sermons} initialVideoId={videoId} />
+          </Suspense>
         </div>
       </section>
 

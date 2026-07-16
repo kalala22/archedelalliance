@@ -9,12 +9,15 @@ import { SermonsPreview } from "@/components/home/sermons-preview";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { EventsPreview } from "@/components/home/events-preview";
 import { CTASection } from "@/components/shared/cta-section";
+import { fetchYouTubeSermons } from "@/services/youtube";
 
 /**
  * Home page — Centre Évangélique Arche de l'Alliance
  * Server Component that composes all home sections.
  */
-export default function HomePage() {
+export default async function HomePage() {
+  const sermons = await fetchYouTubeSermons(4);
+
   return (
     <>
       <HeroSection />
@@ -24,7 +27,7 @@ export default function HomePage() {
       <PastorPreview />
       <MinistriesPreview />
       <SundaySchoolPreview />
-      <SermonsPreview />
+      <SermonsPreview sermons={sermons} />
       <TestimonialsSection />
       <EventsPreview />
       <CTASection />
