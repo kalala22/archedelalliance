@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation } from "@/data/navigation";
+import { MobileMenu } from "@/components/layout/mobile-menu";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,7 @@ export function Navbar() {
         className={cn(
           "fixed left-0 right-0 top-0 z-50 transition-all duration-500",
           isScrolled
-            ? "glass-dark shadow-lg shadow-[var(--color-navy-dark)]/20 py-2"
+            ? "glass-dark py-2 shadow-lg shadow-[var(--color-navy-dark)]/20"
             : "bg-transparent py-4"
         )}
       >
@@ -52,7 +53,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex" aria-label="Navigation principale">
+          <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Navigation principale">
             {navigation.map((item) => (
               <div
                 key={item.href}
@@ -63,7 +64,7 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-xs xl:px-3 xl:text-sm font-medium transition-colors",
+                    "flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-xs font-medium transition-colors xl:px-3 xl:text-sm",
                     pathname === item.href || pathname.startsWith(item.href + "/")
                       ? "text-[var(--color-gold)]"
                       : "text-gray-300 hover:text-white"
@@ -110,12 +111,13 @@ export function Navbar() {
           <div className="flex shrink-0 items-center gap-3">
             <Link
               href="/contact"
-              className="hidden whitespace-nowrap rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-xs xl:text-sm font-semibold text-[var(--color-navy-dark)] transition-all duration-300 hover:bg-[var(--color-gold-light)] hover:shadow-lg hover:shadow-[var(--color-gold)]/20 lg:inline-flex"
+              className="hidden whitespace-nowrap rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-xs font-semibold text-[var(--color-navy-dark)] transition-all duration-300 hover:bg-[var(--color-gold-light)] hover:shadow-lg hover:shadow-[var(--color-gold)]/20 lg:inline-flex xl:text-sm"
             >
               Nous rejoindre
             </Link>
 
             <button
+              type="button"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 lg:hidden"
               aria-label={isMobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -126,67 +128,12 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/60 lg:hidden"
-              onClick={() => setIsMobileOpen(false)}
-            />
-            <motion.nav
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed bottom-0 right-0 top-0 z-50 w-80 max-w-[85vw] overflow-y-auto bg-[var(--color-navy)] p-6 pt-20 shadow-2xl lg:hidden"
-              aria-label="Navigation mobile"
-            >
-              <div className="flex flex-col gap-1">
-                {navigation.map((item) => (
-                  <div key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "block rounded-lg px-4 py-3 text-base font-medium transition-colors",
-                        pathname === item.href
-                          ? "bg-[var(--color-gold)]/10 text-[var(--color-gold)]"
-                          : "text-gray-300 hover:bg-white/5 hover:text-white"
-                      )}
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                    {item.children?.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block rounded-lg px-8 py-2.5 text-sm text-gray-400 transition-colors hover:text-[var(--color-gold)]"
-                        onClick={() => setIsMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <Link
-                  href="/contact"
-                  className="block w-full rounded-full bg-[var(--color-gold)] py-3 text-center text-sm font-semibold text-[var(--color-navy-dark)] transition-colors hover:bg-[var(--color-gold-light)]"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  Nous rejoindre
-                </Link>
-              </div>
-            </motion.nav>
-          </>
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileOpen}
+        onClose={() => setIsMobileOpen(false)}
+        pathname={pathname}
+      />
     </>
   );
 }

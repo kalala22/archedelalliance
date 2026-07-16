@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Quote, ArrowRight } from "lucide-react";
-import { fadeInLeft, fadeInRight, defaultViewport } from "@/lib/animations";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { pastor } from "@/data/pastor";
 import Image from "next/image";
 
@@ -13,7 +10,7 @@ export function PastorPreview() {
       <div className="container-church">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Pastor image */}
-          <motion.div initial="hidden" whileInView="visible" viewport={defaultViewport} variants={fadeInLeft}>
+          <ScrollReveal animation="fadeLeft">
             <div className="group relative mx-auto max-w-md">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-navy)] shadow-2xl shadow-[var(--color-navy)]/20">
                 <Image
@@ -28,12 +25,11 @@ export function PastorPreview() {
               </div>
               {/* Decorative gold frame */}
               <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl border-2 border-[var(--color-gold)]/35 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
-
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* Text content */}
-          <motion.div initial="hidden" whileInView="visible" viewport={defaultViewport} variants={fadeInRight}>
+          <ScrollReveal animation="fadeRight">
             <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">
               Pasteur Titulaire
             </span>
@@ -60,7 +56,7 @@ export function PastorPreview() {
               Découvrir son parcours
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

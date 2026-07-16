@@ -4,6 +4,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { CTASection } from "@/components/shared/cta-section";
 import { SermonsGrid } from "@/components/sermons/sermons-grid";
 import { fetchYouTubeSermons } from "@/services/youtube";
+import { API_CONFIG } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: "Prédications & Messages",
@@ -18,7 +19,7 @@ interface SermonsPageProps {
 export default async function SermonsPage({ searchParams }: SermonsPageProps) {
   const resolvedSearchParams = await searchParams;
   const videoId = typeof resolvedSearchParams?.videoId === "string" ? resolvedSearchParams.videoId : undefined;
-  const sermons = await fetchYouTubeSermons(12);
+  const sermons = await fetchYouTubeSermons(API_CONFIG.youtube.maxResultsPage);
 
   return (
     <>

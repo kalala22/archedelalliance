@@ -18,7 +18,7 @@ export const churchInfo: ChurchInfo = {
     },
     {
       platform: "youtube",
-      url: "https://youtube.com/@archedelalliance",
+      url: "https://youtube.com/@archedelalliance-tv",
       label: "YouTube",
     },
     {
@@ -35,38 +35,51 @@ export const churchInfo: ChurchInfo = {
   worshipSchedule: [
     {
       day: "Dimanche",
-      time: "08h00 - 12h00",
-      label: "Culte Principal",
+      time: "07h30 – 13h30",
+      label: "Cultes de Célébration (3 cultes)",
       description: "Louange, adoration et prédication de la Parole",
     },
     {
       day: "Mercredi",
-      time: "18h00 - 20h00",
+      time: "17h00 - 19h30",
       label: "Étude Biblique",
       description: "Approfondissement de la Parole de Dieu",
     },
     {
       day: "Vendredi",
-      time: "18h00 - 20h00",
-      label: "Nuit de Prière",
+      time: "17h00 - 19h30",
+      label: "Prière & Intercession",
       description: "Intercession et prière communautaire",
     },
     {
       day: "Samedi",
-      time: "09h00 - 11h00",
-      label: "Cellule de Maison",
-      description: "Communion fraternelle en petits groupes",
+      time: "17h00 - 19h30",
+      label: "Réunion Jeunesse",
+      description: "Communion fraternelle et édification des jeunes",
     },
   ],
 };
 
+export const sundayServices = [
+  { label: "1er Culte", time: "07h30 – 09h30" },
+  { label: "2e Culte", time: "10h00 – 11h30" },
+  { label: "3e Culte", time: "12h00 – 13h30" },
+];
+
+export const weeklyPrograms = [
+  { day: "Mercredi", title: "Étude Biblique", icon: "BookOpen" },
+  { day: "Vendredi", title: "Prière & Intercession", icon: "Sparkles" },
+  { day: "Samedi", title: "Réunion Jeunesse", icon: "Users" },
+];
+
 export const churchVision =
-  "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore";
+  "Être une église biblique et dynamique, une arche de salut, d'amour et de transformation au cœur de Kinshasa et pour les nations. Nous aspirons à bâtir des disciples affermis dans la Parole de Dieu, rayonnant par leur foi et leur intégrité dans toutes les sphères de la société.";
 
 export const churchMission =
-  "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore";
+  "Proclamer l'Évangile de Jésus-Christ avec puissance et clarté, accueillir chaque personne avec amour et compassion, et équiper les croyants pour le service spirituel et l'impact communautaire à Masina et partout ailleurs.";
 
-export const churchHistory = `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum`;
+export const churchHistory =
+  "Fondé il y a plus de 27 ans sous l'impulsion du Saint-Esprit et par une vision pastorale authentique, le Centre Évangélique Arche de l'Alliance est né d'un petit groupe de prière passionné par la gloire de Dieu. Au fil des décennies, l'église s'est développée pour devenir un pilier spirituel majeur à Masina (Kinshasa), rassemblant aujourd'hui des milliers de fidèles lors de ses multiples cultes dominicaux de célébration et s'investissant activement dans l'évangélisation et les œuvres sociales.";
 
 export const stats: Stat[] = [
   { label: "Membres actifs", value: 2500, suffix: "+", icon: "Users" },

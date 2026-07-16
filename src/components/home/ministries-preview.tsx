@@ -1,11 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { getLucideIcon } from "@/lib/utils";
 import { SectionTitle } from "@/components/shared/section-title";
-import { staggerContainer, fadeInUp, defaultViewport } from "@/lib/animations";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { ministries } from "@/data/ministries";
 
 export function MinistriesPreview() {
@@ -20,20 +17,14 @@ export function MinistriesPreview() {
           description="Chacun a un rôle à jouer dans le corps de Christ. Découvrez nos ministères et trouvez votre place."
         />
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          variants={staggerContainer}
-          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-        >
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((ministry) => {
             const IconComponent = getLucideIcon(ministry.icon);
             return (
-              <motion.div key={ministry.id} variants={fadeInUp}>
+              <ScrollReveal key={ministry.id} animation="fadeUp" className="h-full">
                 <Link
                   href={`/ministeres/${ministry.slug}`}
-                  className="group block h-full rounded-2xl border border-[var(--color-gray-200)] bg-white p-6 transition-all duration-500 hover:border-[var(--color-gold)]/30 hover:shadow-xl hover:shadow-[var(--color-gold)]/5 hover:-translate-y-1"
+                  className="group block h-full rounded-2xl border border-[var(--color-gray-200)] bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[var(--color-gold)]/30 hover:shadow-xl hover:shadow-[var(--color-gold)]/5"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-navy)] text-[var(--color-gold)] transition-colors duration-300 group-hover:bg-[var(--color-gold)] group-hover:text-[var(--color-navy-dark)]">
                     <IconComponent className="h-5 w-5" />
@@ -44,10 +35,10 @@ export function MinistriesPreview() {
                     Découvrir <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
-              </motion.div>
+              </ScrollReveal>
             );
           })}
-        </motion.div>
+        </div>
 
         <div className="mt-10 text-center">
           <Link

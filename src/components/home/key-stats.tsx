@@ -1,5 +1,3 @@
-"use client";
-
 import { AnimatedCounter } from "@/components/shared/animated-counter";
 import { stats } from "@/data/church";
 import Image from "next/image";
@@ -11,8 +9,9 @@ export function KeyStats() {
       <div className="absolute inset-0 opacity-10">
         <Image
           src="/images/assembler.jpg"
-          alt="Background"
+          alt="Assembler Arche de l'Alliance"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>

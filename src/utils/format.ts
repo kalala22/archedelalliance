@@ -34,13 +34,6 @@ export function formatDateWithDay(dateString: string): string {
   return `${capitalizedDay} ${formatDate(dateString)}`;
 }
 
-/**
- * Truncate text to a maximum length with ellipsis.
- */
-export function truncateText(text: string, maxLength: number): string {
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trimEnd() + "…";
-}
 
 /**
  * Generate initials from a full name.

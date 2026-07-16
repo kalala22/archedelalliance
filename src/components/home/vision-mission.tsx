@@ -1,9 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Eye, Target } from "lucide-react";
 import { SectionTitle } from "@/components/shared/section-title";
-import { fadeInLeft, fadeInRight, defaultViewport } from "@/lib/animations";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { churchVision, churchMission } from "@/data/church";
 
 export function VisionMission() {
@@ -14,7 +11,8 @@ export function VisionMission() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {/* Vision */}
-          <motion.div initial="hidden" whileInView="visible" viewport={defaultViewport} variants={fadeInLeft}
+          <ScrollReveal
+            animation="fadeLeft"
             className="group relative overflow-hidden rounded-2xl border border-[var(--color-gray-200)] bg-white p-8 transition-all duration-500 hover:border-[var(--color-gold)]/30 hover:shadow-xl hover:shadow-[var(--color-gold)]/5 md:p-10"
           >
             <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-[var(--color-gold)]/5 transition-all duration-500 group-hover:scale-150" />
@@ -26,10 +24,11 @@ export function VisionMission() {
               <div className="mt-2 section-divider" />
               <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">{churchVision}</p>
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* Mission */}
-          <motion.div initial="hidden" whileInView="visible" viewport={defaultViewport} variants={fadeInRight}
+          <ScrollReveal
+            animation="fadeRight"
             className="group relative overflow-hidden rounded-2xl border border-[var(--color-gray-200)] bg-white p-8 transition-all duration-500 hover:border-[var(--color-gold)]/30 hover:shadow-xl hover:shadow-[var(--color-gold)]/5 md:p-10"
           >
             <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-[var(--color-navy)]/5 transition-all duration-500 group-hover:scale-150" />
@@ -41,7 +40,7 @@ export function VisionMission() {
               <div className="mt-2 section-divider" />
               <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">{churchMission}</p>
             </div>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

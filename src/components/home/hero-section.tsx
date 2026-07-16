@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, Clock, Calendar, Sparkles, Users, BookOpen } from "lucide-react";
 import { heroTextReveal, fadeIn, staggerContainer } from "@/lib/animations";
 import Image from "next/image";
+import { sundayServices, weeklyPrograms } from "@/data/church";
+import { getLucideIcon } from "@/lib/utils";
 /**
  * Full-screen hero section with gradient overlay and animated text.
  */
@@ -135,11 +137,7 @@ export function HeroSection() {
               </div>
 
               <div className="space-y-2">
-                {[
-                  { label: "1er Culte", time: "07h30 – 09h30" },
-                  { label: "2e Culte", time: "10h00 – 11h30" },
-                  { label: "3e Culte", time: "12h00 – 13h30" },
-                ].map((culte, i) => (
+                {sundayServices.map((culte, i) => (
                   <div
                     key={i}
                     className="flex items-center justify-between rounded-xl bg-white/[0.04] px-3.5 py-2 transition-colors group-hover:bg-white/[0.07]"
@@ -172,12 +170,8 @@ export function HeroSection() {
               </div>
 
               <div className="space-y-2">
-                {[
-                  { day: "Mercredi", title: "Étude Biblique", icon: BookOpen },
-                  { day: "Vendredi", title: "Prière & Intercession", icon: Sparkles },
-                  { day: "Samedi", title: "Réunion Jeunesse", icon: Users },
-                ].map((prog, i) => {
-                  const Icon = prog.icon;
+                {weeklyPrograms.map((prog, i) => {
+                  const Icon = getLucideIcon(prog.icon);
                   return (
                     <div
                       key={i}

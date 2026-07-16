@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { churchInfo } from "@/data/church";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://archedelalliance.cd"),
   title: {
     default: "Centre Évangélique Arche de l'Alliance",
     template: "%s | Arche de l'Alliance",
@@ -63,12 +65,40 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Church", "Organization"],
+    name: churchInfo.name,
+    alternateName: churchInfo.shortName,
+    description: churchInfo.tagline,
+    url: "https://archedelalliance.cd",
+    logo: "https://archedelalliance.cd/favicon.ico",
+    telephone: churchInfo.phone,
+    email: churchInfo.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: churchInfo.address,
+      addressLocality: churchInfo.city.split(",")[0].trim(),
+      addressCountry: "CD",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: churchInfo.coordinates.lat,
+      longitude: churchInfo.coordinates.lng,
+    },
+    sameAs: churchInfo.socialLinks.map((s) => s.url),
+  };
+
   return (
     <html
       lang="fr"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full w-full max-w-full flex-col overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

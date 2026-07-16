@@ -1,8 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/shared/section-title";
-import { fadeInLeft, fadeInRight, defaultViewport } from "@/lib/animations";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { churchHistory } from "@/data/church";
 import Image from "next/image";
 
@@ -17,35 +14,29 @@ export function AboutPreview() {
         />
 
         <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-            variants={fadeInLeft}
-          >
-            {/* Decorative image placeholder */}
+          <ScrollReveal animation="fadeLeft">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-navy)]/5">
-              <Image src="/images/quinousomme.jpeg" alt="About Image" fill className="object-cover" />
+              <Image
+                src="/images/quinousomme.jpeg"
+                alt="À propos de l'Arche de l'Alliance"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-          </motion.div>
+          </ScrollReveal>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-            variants={fadeInRight}
-          >
+          <ScrollReveal animation="fadeRight">
             <h3 className="font-heading text-2xl font-bold text-[var(--color-navy)] md:text-3xl">
               Notre histoire
             </h3>
             <div className="mt-1 section-divider" />
-            <p className="mt-6 text-base leading-relaxed text-[var(--color-gray-600)]">
-              {churchHistory.split("\n\n")[0]}
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              {churchHistory.split("\n\n")[1]}
-            </p>
-          </motion.div>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+              {churchHistory.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

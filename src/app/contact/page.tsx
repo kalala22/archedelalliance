@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/page-hero";
 import { ContactForm } from "@/components/contact/contact-form";
 import { churchInfo } from "@/data/church";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Nous Contacter",
