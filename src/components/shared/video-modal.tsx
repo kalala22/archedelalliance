@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Play } from "lucide-react";
+import { X, Play, ExternalLink } from "lucide-react";
 import type { Sermon } from "@/types";
 import { formatDate } from "@/utils/format";
 
@@ -41,9 +41,10 @@ export function VideoModal({ sermon, onClose }: VideoModalProps) {
             <div className="relative aspect-video w-full bg-black">
               {sermon.id && !sermon.id.startsWith("s") ? (
                 <iframe
-                  src={`https://www.youtube.com/embed/${sermon.id}?autoplay=1`}
+                  src={`https://www.youtube-nocookie.com/embed/${sermon.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                   title={sermon.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                   className="absolute inset-0 h-full w-full border-0"
                 />
@@ -76,6 +77,23 @@ export function VideoModal({ sermon, onClose }: VideoModalProps) {
                   Durée : {sermon.duration}
                 </span>
               </div>
+
+              {sermon.id && !sermon.id.startsWith("s") && (
+                <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 pt-4">
+                  <p className="text-xs text-gray-400">
+                    Problème de lecture ou vérification anti-robot sur mobile ?
+                  </p>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${sermon.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-gold)] px-4 py-2 text-xs font-bold text-[var(--color-navy-dark)] transition-all hover:bg-white shadow-md sm:text-sm"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Ouvrir dans l&apos;application YouTube
+                  </a>
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>
